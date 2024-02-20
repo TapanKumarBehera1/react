@@ -1,0 +1,186 @@
+#bag-main-container {
+    margin: auto;
+    width: 980px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    color: #282c3f;
+}
+
+.bag-page-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.added-bag-details {
+    border: 2px solid whitesmoke;
+    display: flex;
+    padding: 12px 12px 12px;
+    margin-top: 15px;
+}
+
+#added-item-image {
+    width: 111px;
+}
+
+.item-details {
+    position: relative;
+    top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 420px;
+    padding-left: 12px;
+    gap: 10px;
+}
+
+.brandname-text {
+    font-size: 14px;
+    color: #282c3f;
+    font-weight: 700;
+}
+
+.bag-item-name {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* line-height: 16px; */
+    font-size: 14px;
+}
+
+.all-price-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.bagitem-current-price {
+    color: #282c3f;
+    font-weight: 700;
+}
+
+.bagitem-original-price {
+    color: #94969f;
+    padding: 0 8px;
+    text-decoration: line-through;
+}
+
+.bagitem-discount-price {
+    color: #f16565;
+    font-size: 14px;
+}
+
+
+.return-period-container {
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 6px;
+}
+
+#return-icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 0px 1px;
+    transform: rotateX(140deg);
+    font-size: 10px;
+}
+
+#return-day {
+    font-size: 12px;
+}
+
+#delete-items {
+    font-size: 20px;
+    margin-top: -12px;
+    margin-right: -10px;
+    padding: 2px 5px;
+    cursor: pointer;
+    height:min-content;
+}
+
+
+
+/* 2nd div  */
+
+
+.item-pricingCal-container {
+    border-left: 2px solid whitesmoke;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 100%;
+    gap: 10px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+#calculate-item-no {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    color: #535766;
+}
+
+#mrp-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+#discount-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+#total-discount {
+    color: #03a685;
+}
+
+#convenience-fee-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+#span-know-more {
+    margin-left: 8px;
+    font-weight: 700;
+    color: rgb(255, 63, 108);
+    cursor: pointer;
+}
+
+#total-amount-box {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1.5px solid whitesmoke;
+    font-size: 15px;
+    font-weight: 700;
+    color: #3e4152;
+    padding-top: 16px;
+}
+
+#placeorder-btn {
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 2px;
+    border-width: 0px;
+    padding: 10px 16px;
+    background-color: rgb(255, 63, 108);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    /* margin-bottom: 50px; */
+}
