@@ -1,7 +1,10 @@
+import Store from "./Store/ReactStore"
+import { useContext } from "react"
 import logo from "../images/logo/myntra-logo.png"
 import "./App.css"
 import { NavLink } from "react-router-dom"
 const Header = () => {
+    const { addPrds, setPrds } = useContext(Store)
     return (
         <>
             <nav>
@@ -61,7 +64,7 @@ const Header = () => {
                                 <i className="fa-solid fa-bag-shopping nav-icons" />
                                 <div className="icons-text" id="bag-box">Bag</div>
                             </div>
-                            <div id="bag-items-counter">0</div>
+                            <div id="bag-items-counter">{addPrds.length}</div>
                         </NavLink>
                     </div>
                 </div>

@@ -1,7 +1,21 @@
+import Store from "./Store/ReactStore"
+import { useContext } from "react"
+import { useEffect } from "react"
 import selected_product_image from "../images/productImg/image1-fromdatabase.webp"
 import "./Bag.css"
 
 const Cart = () => {
+
+    const { addPrds, setPrds } = useContext(Store)
+
+
+    useEffect(() => {
+        let prds = JSON.parse(localStorage.getItem("products"))
+        if (prds) {
+            setPrds(prds)
+        }
+    }, [])
+
     return (
         <>
             <main id="bag-main-container">

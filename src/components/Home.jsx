@@ -1,8 +1,26 @@
+import Store from "./Store/ReactStore"
+import { useContext, useEffect } from "react"
 import items from "./Data"
 import "./App.css"
 import { useState } from "react"
 const Home = () => {
     const [products, setProducts] = useState(items)
+
+    const { addPrds, setPrds } = useContext(Store)
+
+    function addToBagFnc(product) {
+        setPrds([...addPrds, { product }])
+        let xPrds = [...addPrds, { product }]
+        localStorage.setItem("products", JSON.stringify(xPrds))
+    }
+
+    useEffect(() => {
+        let prds = JSON.parse(localStorage.getItem("products"))
+        if (prds) {
+            setPrds(prds)
+        }
+    }, [])
+
     return (
         <>
             <main>
@@ -23,7 +41,7 @@ const Home = () => {
                                             <span className="original-price">Rs {product.original_price}</span>
                                             <span className="discount">{product.discount_percentage}% OFF</span>
                                         </div>
-                                        <button className="btn-add-bag">Add to Bag</button>
+                                        <button className="btn-add-bag" onClick={() => addToBagFnc(product)}>Add to Bag</button>
                                     </div>
                                 </div>
                             )
