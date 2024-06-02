@@ -9,8 +9,8 @@ const Home = () => {
     const { addPrds, setPrds } = useContext(Store)
 
     function addToBagFnc(product) {
-        setPrds([...addPrds, { product }])
-        let xPrds = [...addPrds, { product }]
+        setPrds([...addPrds, product ])
+        let xPrds = [...addPrds, product ]
         localStorage.setItem("products", JSON.stringify(xPrds))
     }
 

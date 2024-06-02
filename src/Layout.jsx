@@ -5,7 +5,7 @@ import Header from "./components/Header"
 import { useState } from "react"
 
 const Layout = () => {
-    const name = "Creater Tapan Kumar Behera"
+    const name = "Tapan Kumar Behera"
     const age = 99
     const village = "xyz"
     const pincode = 999999

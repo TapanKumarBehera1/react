@@ -35,18 +35,16 @@ const router = createBrowserRouter([
       { path: "/product-wishlist", element: <Wishlist /> },
       { path: "/view-cart", element: <Cart /> },
       { path: "/shop-product", element: <Product /> },
-      { path: "/About", element: <About /> },
-      { path: "/admin/profile", element: <Profile /> },
-      // {path: "/admin/profile/github", element: <Github />, loader: async () => {
+      { path: "/about", element: <About /> },
+      { path: "/user/profile", element: <Profile /> },
+      // {path: "/user/profile/github", element: <Github />, loader: async () => {
       //     let res = await fetch("https://api.github.com/users/TapanKumarBehera1")
       //     return res.json()
       //   }},
 
-      { path: "/admin/profile/github", element: <Github />, loader: fetchGithubData },
-      { path: "/admin/profile/location", element: <GetUserLocation /> },
-      { path: "/admin/profile/location/data", element: <Address /> },
-
-      // { path: "*", element: <Error /> },  // //error page handle
+      { path: "/user/profile/github", element: <Github />, loader: fetchGithubData },
+      { path: "/user/profile/location", element: <GetUserLocation /> },
+      { path: "/user/profile/location/data", element: <Address /> },
     ],
   },
   { path: "*", element: <Error /> },    // //error page handle

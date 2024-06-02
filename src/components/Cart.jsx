@@ -14,14 +14,52 @@ const Cart = () => {
         if (prds) {
             setPrds(prds)
         }
+        calculatePrice()
     }, [])
+
+    function calculatePrice() {
+
+    }
+
+    function handleDelete(id) {
+        const spreadArray = [...addPrds]
+        const newValue = spreadArray.filter(prd => prd.id !== id)
+        setPrds(newValue)
+        localStorage.setItem("products", JSON.stringify(newValue))
+    }
+
 
     return (
         <>
             <main id="bag-main-container">
-                <div className="bag-page-container">
+                {addPrds.length > 0 ? <div className="bag-page-container">
                     <div id="div-one">
-                        <div className="added-bag-details">
+
+                        {addPrds && addPrds.map((prds, index) => {
+                            return (
+                                <div className="added-bag-details" key={index}>
+                                    <img src={prds.item_image} alt="item-image" id="added-item-image" />
+                                    <div className="item-details">
+                                        <div className="brandname-text">{prds.company_name}</div>
+                                        <div className="bag-item-name">{prds.item_name}</div>
+                                        <div className="all-price-container">
+                                            <div className="bagitem-current-price">₹ {prds.current_price}</div>
+                                            <div className="bagitem-original-price">₹ {prds.original_price}</div>
+                                            <div className="bagitem-discount-price">{prds.discount_percentage}% OFF</div>
+                                        </div>
+                                        <div className="return-period-container">
+                                            <div id="return-icon-box">
+                                                <i className="fa-solid fa-rotate-left" id="return-icon" />
+                                            </div>
+                                            <div><strong id="return-day">14 days </strong>return available</div>
+                                        </div>
+                                    </div>
+                                    <div id="delete-items" onClick={() => handleDelete(prds.id)}>X</div>
+                                </div>
+                            )
+                        })}
+
+                        {/* <div className="added-bag-details">
                             <img src={selected_product_image} alt="item-image" id="added-item-image" />
                             <div className="item-details">
                                 <div className="brandname-text">ADIDAS</div>
@@ -39,7 +77,8 @@ const Cart = () => {
                                 </div>
                             </div>
                             <div id="delete-items">X</div>
-                        </div>
+                        </div> */}
+
                     </div>
                     <div className="item-pricingCal-container">
                         <div id="calculate-item-no">PRICE DETAILS 1 item</div>
@@ -61,7 +100,11 @@ const Cart = () => {
                         </div>
                         <button id="placeorder-btn">PLACE ORDER</button>
                     </div>
-                </div>
+                </div> :
+                    <div className="items-container container-color" style={{backgroundColor:"#FFFFFF",color:"#000000",paddingTop:"50px"}}>
+                        <h2 style={{textAlign:"center"}}>Cart is empty</h2>
+                    </div>
+                }
             </main>
         </>
     )

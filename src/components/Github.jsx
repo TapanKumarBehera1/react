@@ -36,7 +36,6 @@ const Github = () => {
 export default Github
 
 export async function fetchGithubData() {
-    // let res = await fetch("https://api.github.com/users/hiteshchoudhary")
     let res = await fetch("https://api.github.com/users/TapanKumarBehera1")
     return res.json()
 }

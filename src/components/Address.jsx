@@ -1,7 +1,6 @@
 import "./App.css"
 const Address = ({ address }) => {
-    
-    console.log("address");
+        
     return (
         <>
                 {address &&

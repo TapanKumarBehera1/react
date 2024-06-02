@@ -24,9 +24,7 @@ const GetUserLocation = () => {
         const url = `https://api.opencagedata.com/geocode/v1/json?key=${API_KEY}&q=${getLatitude}%2C+${getLongitude}&pretty=1&no_annotations=1`
         let res = await fetch(url)
         let locData = await res.json()
-        console.log(locData.results[0])
         setAddress(locData.results[0])
-        console.log(locData.results[0])
         setLoader(false)
     }
 
@@ -39,7 +37,6 @@ const GetUserLocation = () => {
 
     return (
         <>
-            {/* <div className="items-container container-color"> */}
                 <div className="_link_class" onClick={loadLocationHandle}>
                     {address ? <Address address={address} /> : "Load User Data"}
                     {loader &&
@@ -48,7 +45,6 @@ const GetUserLocation = () => {
                         </div>
                     }
                 </div>
-            {/* </div> */}
         </>
     )
 }
